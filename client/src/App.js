@@ -66,14 +66,22 @@ function About() {
   const history = useHistory();
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    // fetch('https://jsonplaceholder.typicode.com/todos/1')
+    //   .then(response => response.json())
+    //   .then(json => {
+    //     console.log(json);
+    //     history.push(`/user/${json.userId}`)
+    //   })
+
+      fetch('/getNumber')
       .then(response => response.json())
-      .then(json => {
-        console.log(json);
-        history.push(`/user/${json.userId}`)
+      .then(data => {
+        console.log(data);
+        
       })
   }, [])
   return <h2>About</h2>;
+  
 }
 
 function Users({counter,setCounter}) {
